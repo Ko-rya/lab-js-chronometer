@@ -4,11 +4,10 @@ class Chronometer {
     this.intervalId = null;
   }
   start(printTimeCallback) {
-    this.printTimeCallback = printTimeCallback;
       this.intervalId = setInterval(() => {
         this.currentTime++;
-        if (typeof this.printTimeCallback === 'function') {
-          this.printTimeCallback(this.currentTime);
+        if (typeof printTimeCallback === 'function') {
+          printTimeCallback(this.currentTime);
         }
       }, 1000);
   }
